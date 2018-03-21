@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        do {
+            let correct = Math.floor(Math.random() * 10) + 1;
+            let x = 11;
+            let counter = 0;
+
+            while (x != correct && counter < 3) {
+                x = parseInt(prompt("Gissa ett tal?"));
+                if (!isNaN(x) && x > 0) {
+                    if (x == correct) {
+                        confirm("Korrekt! Gissning: " + x + ", Rätt " + correct + ". Du klarade det på " + counter + " försök!");
+                    }
+                    else {
+                        if (x < correct) {
+                            confirm("du gissade för lågt");
+                        }
+                        else {
+                            confirm("du gissade för högt")
+                        }
+                    }
+                    counter++;
+                }
+                else {
+                    alert("uppge en siffra, din C#'are!")
+                }
+            }
+
+            if (x != correct) {
+                alert("Du klarade inte på dina tre försök!");
+            }
+        }
+        while (confirm("Vill du fortsätta spela?") == true);
+
+        alert("")
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
