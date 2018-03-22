@@ -28,7 +28,8 @@ let inputFieldIsNotEmpty = function () {
     inputField.placeholder = "";
     if (
             ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
-         || ((inputField.value.length == 2) && (inputField.value == 10))
+         ||  (inputField.value == 10)
+         ||  (inputField.value == 666)
     ) {
         btn.disabled = false;
     }
@@ -59,7 +60,7 @@ let gameAdvance = function (value) {
             inputField.placeholder = "För lågt! Försök igen";
         }
         else {
-            inputField.placeholder = "För högt! Försök igen";
+            inputField.placeholder = "För hö§gt! Försök igen";
         }
     }
     else if (trials == 3) {
