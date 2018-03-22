@@ -2,9 +2,9 @@
 let inputFieldIsNotEmpty = function () {
     inputField.placeholder = "";
     if (
-        ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
-        || ((inputField.value.length == 2) && (inputField.value == 10))
-        ) {
+            ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
+         || ((inputField.value.length == 2) && (inputField.value == 10))
+    ) {
         btn.disabled = false;
     }
     else {
@@ -16,8 +16,8 @@ let correct = Math.floor(Math.random() * 10) + 1;
 let trials = 0;
 
 let newGame = function () {
-    headerHeader.innerText = 
-    `Gissa ett tal mellan 1-10
+    headerHeader.innerText =
+        `Gissa ett tal mellan 1-10
     (3 försök kvar)`;
     btn.innerText = "Gissa";
     inputField.value = "";
@@ -42,8 +42,8 @@ let gameAdvance = function (value) {
         gameWin();
     }
     else if (trials < 3) {
-        headerHeader.innerText = 
-        `Gissa ett tal mellan 1-10
+        headerHeader.innerText =
+            `Gissa ett tal mellan 1-10
         (${(3 - trials)} försök kvar)`;
         inputField.value = "";
         if (value < correct) {
@@ -52,15 +52,9 @@ let gameAdvance = function (value) {
         else {
             inputField.placeholder = "För högt! Försök igen";
         }
-
     }
     else if (trials == 3) {
-        headerHeader.innerText = `Tyvärr!
-        Rätt svar var: ${correct}`;
-        btn.innerText = "Spela igen";
-        inputField.value = "";
-        inputField.classList.add("hidden");
-        btn.disabled = false;
+        gameEnd();
     }
 }
 
@@ -74,9 +68,12 @@ let gameBtnClicked = function () {
 }
 
 let gameEnd = function () {
-    headerHeader.innerText = "Gissa sej ett tal";
+    headerHeader.innerText = `Tyvärr!
+    Rätt svar var: ${correct}`;
+    btn.innerText = "Spela igen";
+    inputField.value = "";
     inputField.classList.add("hidden");
-    btn.innerText = "Börja!";
+    btn.disabled = false;
 }
 
 let btn = document.getElementById("btnButton");
