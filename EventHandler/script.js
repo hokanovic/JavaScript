@@ -2,19 +2,6 @@
 let correct = Math.floor(Math.random() * 10) + 1;
 let trials = 0;
 
-let inputFieldIsNotEmpty = function () {
-    inputField.placeholder = "";
-    if (
-            ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
-         || ((inputField.value.length == 2) && (inputField.value == 10))
-    ) {
-        btn.disabled = false;
-    }
-    else {
-        btn.disabled = true;
-    }
-}
-
 let newGame = function () {
     headerHeader.innerText =
         `Gissa ett tal mellan 1-10
@@ -26,6 +13,28 @@ let newGame = function () {
 
     correct = Math.floor(Math.random() * 10) + 1;
     trials = 0;
+}
+
+let gameBtnClicked = function () {
+    if (btn.innerText == "Börja!" || btn.innerText == "Spela igen") {
+        newGame();
+    }
+    else if (btn.innerText == "Gissa") {
+        gameAdvance(inputField.value);
+    }
+}
+
+let inputFieldIsNotEmpty = function () {
+    inputField.placeholder = "";
+    if (
+            ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
+         || ((inputField.value.length == 2) && (inputField.value == 10))
+    ) {
+        btn.disabled = false;
+    }
+    else {
+        btn.disabled = true;
+    }
 }
 
 let gameWin = function () {
@@ -55,15 +64,6 @@ let gameAdvance = function (value) {
     }
     else if (trials == 3) {
         gameEnd();
-    }
-}
-
-let gameBtnClicked = function () {
-    if (btn.innerText == "Börja!" || btn.innerText == "Spela igen") {
-        newGame();
-    }
-    else if (btn.innerText == "Gissa") {
-        gameAdvance(inputField.value);
     }
 }
 
