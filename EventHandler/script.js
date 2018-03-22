@@ -13,7 +13,6 @@ let inputFieldIsNotEmpty = function () {
 }
 
 let correct = Math.floor(Math.random() * 10) + 1;
-let guess = 11;
 let trials = 0;
 
 let newGame = function () {
@@ -26,7 +25,6 @@ let newGame = function () {
     btn.disabled = true;
 
     correct = Math.floor(Math.random() * 10) + 1;
-    guess = 11;
     trials = 0;
 }
 
