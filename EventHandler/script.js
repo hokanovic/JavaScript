@@ -1,4 +1,7 @@
 
+let correct = Math.floor(Math.random() * 10) + 1;
+let trials = 0;
+
 let inputFieldIsNotEmpty = function () {
     inputField.placeholder = "";
     if (
@@ -11,9 +14,6 @@ let inputFieldIsNotEmpty = function () {
         btn.disabled = true;
     }
 }
-
-let correct = Math.floor(Math.random() * 10) + 1;
-let trials = 0;
 
 let newGame = function () {
     headerHeader.innerText =
