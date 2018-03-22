@@ -28,8 +28,8 @@ let inputFieldIsNotEmpty = function () {
     inputField.placeholder = "";
     if (
             ((inputField.value.length == 1) && (inputField.value >= 1) && (inputField.value <= 9))
-         ||  (inputField.value == 10)
-         ||  (inputField.value == 666)
+         || ((inputField.value.length == 2) && (inputField.value == 10))
+         || ((inputField.value.length == 3) &&(inputField.value == 666))
     ) {
         btn.disabled = false;
     }
